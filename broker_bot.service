@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Bot (broker_bot)
+After=network.target
+
+[Service]
+User=the_bot_maker
+Group=the_bot_maker
+
+WorkingDirectory=/home/the_bot_maker/dev_broker_bot/
+Environment="PYTHONPATH=/home/the_bot_maker/dev_broker_bot/"
+ExecStart=/home/the_bot_maker/dev_broker_bot/.venv/bin/python3 /home/the_bot_maker/dev_broker_bot/main.py
+
+[Install]
+WantedBy=multi-user.target
+
